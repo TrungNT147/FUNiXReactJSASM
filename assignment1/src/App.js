@@ -1,25 +1,31 @@
 import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { DEPARTMENTS, STAFFS } from './shared/staffs';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import Staff from './StaffList/StaffListComponent';
 
-function App() {
-  return (
+class App extends Component {
+  constructor(props) {
+  super(props);
+    this.state = {
+      staffs: STAFFS,
+      deps: DEPARTMENTS,
+
+    };
+  }
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <Navbar dark color="primary text-light">
+          <div className="container">
+            <NavbarBrand>Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
+          </div>
+        </Navbar>
+        <Staff staffs={this.state.staffs} />
+      </div>
+      );
+    }
 }
 
 export default App;
