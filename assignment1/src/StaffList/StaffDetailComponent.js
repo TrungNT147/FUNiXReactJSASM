@@ -1,54 +1,54 @@
 import React, { Component } from 'react';
-import { STAFFS } from '../shared/staffs';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import dateFormat, { masks } from "dateformat";
-
+import { Link } from 'react-router-dom';
 
 class StaffDetail extends Component {
   constructor(props) {
   super(props);
   this.state = {
-  };
+    };
   }
+
+  renderStaff() {
+    const staff = this.props.staff
+
+    if (staff !== undefined) 
+    
+      return (
+      <div className='col-12 col-md-5 mt-2 mx-auto'>
+        <Card>
+          <Link to={`/staff/${staff.id}`}>
+            <CardBody>
+              <CardImg width="100%" object src={staff.image} alt={staff.name} />
+              <CardTitle>{staff.name}</CardTitle>
+              <CardText>Ngày sinh:{dateFormat(staff.doB, "dd/mm/yyyy")} </CardText>
+              <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")} </CardText>
+              <CardText>Phòng ban: {staff.department.name} </CardText>
+              <CardText>Số ngày nghỉ còn lại: {staff.annualLeave} </CardText>
+              <CardText>Số ngày đã làm thêm: {staff.overTime} </CardText>
+            </CardBody>
+          </Link>
+        </Card>
+      </div>
+    ); 
+    else {
+      <div></div>
+    }
+  }
+
   render() {
     console.log(this.props.staff)
-    // let dob = dateFormat(staff.doB, "dd/mm/yyyy");
-    // let dStart = dateFormat(staff.startDate, "dd/mm/yyyy");
-    // const staff = this.props.staffs
+    
     return (
-      <div>
-        {/* <Card>
-        <CardBody>
-          <CardImg width="100%" object src={staff.image} alt={staff.name} />
-          <CardTitle>{staff.name}</CardTitle>
-          <CardText>Ngày sinh: {dob} </CardText>
-          <CardText>Ngày vào công ty: {dStart} </CardText>
-          <CardText>Phòng ban: {staff.department.name} </CardText>
-          <CardText>Số ngày nghỉ còn lại: {staff.annualLeave} </CardText>
-          <CardText>Số ngày đã làm thêm: {staff.overTime} </CardText>
-        </CardBody>
-        </Card> */}
+      
+      <div className='row'>
+        {this.renderStaff(this.props.staff)}
       </div>
     )
    
   }
 
-  // render() {
-  //   return (
-  //     <div className='row'>{this.renderStaff()}</div>
-  //     // <Card>
-  //     //   <CardBody>
-  //     //     <CardImg width="100%" object src={staff.image} alt={staff.name} />
-  //     //     <CardTitle>{staff.name}</CardTitle>
-  //     //     <CardText>Ngày sinh: {doB} </CardText>
-  //     //     <CardText>Ngày vào công ty: {dStart} </CardText>
-  //     //     <CardText>Phòng ban: {staff.department.name} </CardText>
-  //     //     <CardText>Số ngày nghỉ còn lại: {staff.annualLeave} </CardText>
-  //     //     <CardText>Số ngày đã làm thêm: {staff.overTime} </CardText>
-  //     //   </CardBody>
-  //     // </Card>
-  //   )
-  //   }
   }
 
 export default StaffDetail

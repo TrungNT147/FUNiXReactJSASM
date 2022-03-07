@@ -15,8 +15,7 @@ class Staff extends Component {
     const staff = this.props.staffs.map((staff) => {
       return (
         <div className="col-12 col-md-6 col-lg-4 mt-2">
-          <Card key={staff.id} 
-            onClick={() => this.props.onClick(staff.id)}>
+          <Card key={staff.id} >
               <CardTitle>{staff.name}</CardTitle>
           </Card>
         </div>
