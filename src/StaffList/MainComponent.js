@@ -14,35 +14,33 @@ class Main extends Component {
   super(props);
     this.state = {
       staffs: STAFFS,
-      selectedStaff: null,
-
     };
   }
   // onStaffSelect(staffId) {
   //   this.setState({selectedStaff: staffId});
   // }
+
   render() {
     const HomePage = () => {
       return(
         <Home />
       )
     }
-    const StaffInfo = ({match}) => {
+    const StaffWithId = ({match}) => {
       return(
         <StaffDetail staff={this.state.staffs.filter((staff) => staff.id === parseInt(match.params.staffId,10))[0]} />
       );
     }
 
     
-    console.log(StaffInfo);
     return (
     <BrowserRouter>
       <div>
         <Header />
         <Switch>
           <Route path="/home" component={HomePage} />
-          <Route path="/staff" component={() => <Staff staffs={this.state.staffs} />} />
-          <Route path="/staff/:staffId" component={StaffInfo} />
+          <Route exact path="/staff" component={() => <Staff staffs={this.state.staffs} />} />
+          <Route path="/staff/:staffId" component={StaffWithId} />
           <Redirect to="/home" />
         </Switch>
         {/* <Staff staffs={this.state.staffs} 

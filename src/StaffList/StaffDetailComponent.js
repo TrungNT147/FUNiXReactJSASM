@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Container, Row, Col, CardTitle, CardText, CardImg , Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import dateFormat, { masks } from "dateformat";
 import { Link } from 'react-router-dom';
+
 
 class StaffDetail extends Component {
   constructor(props) {
@@ -17,19 +18,26 @@ class StaffDetail extends Component {
     
       return (
       <div className='col-12 col-md-5 mt-2 mx-auto'>
-        <Card>
-          <Link to={`/staff/${staff.id}`}>
-            <CardBody>
-              <CardImg width="100%" object src={staff.image} alt={staff.name} />
+        <Breadcrumb>
+          <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+          <BreadcrumbItem><Link to="/staff">Nhân viên</Link></BreadcrumbItem>
+          <BreadcrumbItem active>{staff.name}</BreadcrumbItem>
+        </Breadcrumb>
+        <Container>
+          <Row>
+            <Col xs="3">
+              <CardImg  width="100%" object src={staff.image} alt={staff.name} />
+            </Col>
+            <Col xs="9">
               <CardTitle>{staff.name}</CardTitle>
               <CardText>Ngày sinh:{dateFormat(staff.doB, "dd/mm/yyyy")} </CardText>
               <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")} </CardText>
               <CardText>Phòng ban: {staff.department.name} </CardText>
               <CardText>Số ngày nghỉ còn lại: {staff.annualLeave} </CardText>
               <CardText>Số ngày đã làm thêm: {staff.overTime} </CardText>
-            </CardBody>
-          </Link>
-        </Card>
+            </Col>
+          </Row>
+        </Container>
       </div>
     ); 
     else {
@@ -38,7 +46,6 @@ class StaffDetail extends Component {
   }
 
   render() {
-    console.log(this.props.staff)
     
     return (
       

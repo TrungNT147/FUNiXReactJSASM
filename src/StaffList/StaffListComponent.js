@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { STAFFS } from '../shared/staffs';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import StaffDetail from './StaffDetailComponent';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle,  Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
 
 class Staff extends Component {
   constructor(props) {
@@ -11,17 +13,17 @@ class Staff extends Component {
 
   }
 
-  
-
   render() {
-    console.log(staff);
+
     const staff = this.props.staffs.map((staff) => {
       return (
-        <div className="col-6 col-md-4 col-lg-2 mt-2">
-          <Card key={staff.id} >
-              <CardImg width="100%" object src={staff.image} alt={staff.name} />
-              <CardTitle>{staff.name}</CardTitle>
-          </Card>
+        <div className="col-6 col-md-3 col-lg-2 mt-2">
+          <Link to={`/staff/${staff.id}`}>
+            <Card key={staff.id} >
+                <CardImg width="100%" object src={staff.image} alt={staff.name} />
+                <CardTitle>{staff.name}</CardTitle>
+            </Card>
+          </Link>
         </div>
       );
     });
@@ -29,11 +31,9 @@ class Staff extends Component {
     return (
       <div className="container">
           <div className="row">
-            <div className="col-12 col-md-6 col-lg-4 mt-2">
-              <h4>Nhân viên</h4>
-            </div>
+            <h4 className="col-6 col-md-3 col-lg-2 mt-2">Nhân viên</h4>
           </div>
-          <hr/>
+          <hr />
           <div className="row">
               {staff}
           </div>
