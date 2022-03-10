@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { STAFFS } from '../shared/staffs';
 import StaffDetail from './StaffDetailComponent';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle,  Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 

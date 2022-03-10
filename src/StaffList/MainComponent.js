@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { STAFFS } from '../shared/staffs';
+import { STAFFS, DEPARTMENTS } from '../shared/staffs';
 import { BrowserRouter } from 'react-router-dom';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Staff from '../StaffList/StaffListComponent';
@@ -7,6 +7,8 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import StaffDetail from './StaffDetailComponent';
+import Department from './DepartmentComponent';
+import Salary from './SalaryComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
@@ -14,6 +16,7 @@ class Main extends Component {
   super(props);
     this.state = {
       staffs: STAFFS,
+      departments: DEPARTMENTS,
     };
   }
   // onStaffSelect(staffId) {
@@ -26,6 +29,7 @@ class Main extends Component {
         <Home />
       )
     }
+
     const StaffWithId = ({match}) => {
       return(
         <StaffDetail staff={this.state.staffs.filter((staff) => staff.id === parseInt(match.params.staffId,10))[0]} />
@@ -41,6 +45,8 @@ class Main extends Component {
           <Route path="/home" component={HomePage} />
           <Route exact path="/staff" component={() => <Staff staffs={this.state.staffs} />} />
           <Route path="/staff/:staffId" component={StaffWithId} />
+          <Route path="/department" component={() => <Department departments={this.state.departments} />} />
+          <Route path="/salary" component={() => <Salary staffs={this.state.staffs} />} />
           <Redirect to="/home" />
         </Switch>
         {/* <Staff staffs={this.state.staffs} 

@@ -10,18 +10,18 @@ function Home(props) {
       </div>
       <div className="row">
         <div className="col-12 col-md-3 mx-2">
-          <Card>
-            <Link style={{ textDecoration: 'none' , color: 'black' , fontWeight: 'bold', textTransform: 'uppercase' }} to='/staff'>Nhân viên</Link>
+          <Card className="p-5">
+            <Link className="mx-auto" style={{ textDecoration: 'none' , color: 'black' , fontWeight: 'bold', textTransform: 'uppercase' }} to='/staff'>Nhân viên</Link>
           </Card>
         </div>
         <div className="col-12 col-md-3 mx-2">
-          <Card>
-            <Link style={{ textDecoration: 'none' , color: 'black' , fontWeight: 'bold', textTransform: 'uppercase' }} to='/dept'>Phòng ban</Link>
+          <Card className="p-5">
+            <Link className="mx-auto" style={{ textDecoration: 'none' , color: 'black' , fontWeight: 'bold', textTransform: 'uppercase' }} to='/department'>Phòng ban</Link>
           </Card>
         </div>
         <div className="col-12 col-md-3 mx-2">
-          <Card>
-            <Link style={{ textDecoration: 'none' , color: 'black' , fontWeight: 'bold', textTransform: 'uppercase' }} to='/salary'>Bảng lương</Link>
+          <Card className="p-5">
+            <Link className="mx-auto" style={{ textDecoration: 'none' , color: 'black' , fontWeight: 'bold', textTransform: 'uppercase' }} to='/salary'>Bảng lương</Link>
           </Card>
         </div>
       </div>

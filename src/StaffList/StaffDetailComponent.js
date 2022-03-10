@@ -17,7 +17,7 @@ class StaffDetail extends Component {
     if (staff !== undefined) 
     
       return (
-      <div className='col-12 col-md-5 mt-2 mx-auto'>
+      <div className='col-12 mx-auto'>
         <Breadcrumb>
           <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
           <BreadcrumbItem><Link to="/staff">Nhân viên</Link></BreadcrumbItem>
