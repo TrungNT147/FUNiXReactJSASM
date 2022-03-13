@@ -96,98 +96,105 @@ class Staff extends Component {
           <div className="row">
             <h4 className="col-6 col-md-3 col-lg-2 mt-2">Nhân viên</h4>
           </div>
-          <div>
-            <Button color="danger" onClick={this.toggle}><strong>+</strong></Button>
-            <Modal isOpen={this.state.modal} toggle={this.toggle}>
-              <ModalHeader toggle={this.toggle}>Thêm nhân viên</ModalHeader>
-              <ModalBody>
-              <Form onSubmit={this.handleSubmit}>
-                <FormGroup row>
-                  <Label htmlFor="name" md={2}>
-                    Họ và Tên:
-                  </Label>
-                  <Col md={10}>
-                    <Input type="text" id="name"
-                          placeholder="Nhập tên"
-                          name="name"
-                          value={this.state.name} 
-                          // valid = {errors.name === ""}
-                          // invalid = {errors.name !== ""}
-                          // onBlur={this.handleBlur('name')}
-                          onChange={this.handleInputChange} />
-                    {/* <FormFeedback>{errors.name}</FormFeedback> */}
-                  </Col>  
-                </FormGroup>
-                <FormGroup row>
-                  <Label htmlFor="doB" md={2}>
-                    Ngày sinh:
-                  </Label>
-                  <Col md={10}>
-                    <Input type="date" id="doB"
-                          name="doB"
-                          value={this.state.doB}
-                          onChange={this.handleInputChange} />
-                  </Col>  
-                </FormGroup>
-                <FormGroup row>
-                  <Label htmlFor="startDate" md={2}>
-                    Ngày nhận việc:
-                  </Label>
-                  <Col md={10}>
-                    <Input type="date" id="startDate"
-                          name="startDate"
-                          value={this.state.startDate}
-                          onChange={this.handleInputChange} />
-                  </Col>  
-                </FormGroup>
-                <FormGroup row>
-                  <Label htmlFor="department" md={2}>
-                    Phòng ban:
-                  </Label>
-                  <Col md={10}>
-                    <Input type="select" id="department"
-                          name="department"
-                          value={this.state.department}
-                          onChange={this.handleInputChange}>
-                      <option>Sale</option>
-                      <option>HR</option>
-                      <option>Marketing</option>
-                      <option>IT</option>
-                      <option>Finance</option>
-                    </Input>
-                  </Col>  
-                </FormGroup>
-                <FormGroup row>
-                  <Label htmlFor="annualLeave" md={2}>
-                    Số ngày nghỉ còn lại:
-                  </Label>
-                  <Col md={10}>
-                    <Input type="number" id="annualLeave"
-                          name="annualLeave"
-                          value={this.state.annualLeave}
-                          onChange={this.handleInputChange} />
-                  </Col>  
-                </FormGroup>
-                <FormGroup row>
-                  <Label htmlFor="overTime" md={2}>
-                    Số ngày đã làm thêm:
-                  </Label>
-                  <Col md={10}>
-                    <Input type="number" id="overTime"
-                          name="overTime"
-                          value={this.state.overTime} 
-                          onChange={this.handleInputChange}/>
-                  </Col>  
-                </FormGroup>
-                <Button type="submit" color="primary" onClick={this.toggle} onSubmit={this.handleSubmit}>Thêm</Button>{' '}
-              </Form>              
-              </ModalBody>
-            <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>Đóng</Button>
-            </ModalFooter>
-            </Modal>
+          <div className="row">
+            <div className="col-4 col-md-4 col-lg-4">
+              <Button color="danger" onClick={this.toggle}><strong>+</strong></Button>
+              <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                <ModalHeader toggle={this.toggle}>Thêm nhân viên</ModalHeader>
+                <ModalBody>
+                <Form onSubmit={this.handleSubmit}>
+                  <FormGroup row>
+                    <Label htmlFor="name" md={2}>
+                      Họ và Tên:
+                    </Label>
+                    <Col md={10}>
+                      <Input type="text" id="name"
+                            placeholder="Nhập tên"
+                            name="name"
+                            value={this.state.name} 
+                            // valid = {errors.name === ""}
+                            // invalid = {errors.name !== ""}
+                            // onBlur={this.handleBlur('name')}
+                            onChange={this.handleInputChange} />
+                      {/* <FormFeedback>{errors.name}</FormFeedback> */}
+                    </Col>  
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label htmlFor="doB" md={2}>
+                      Ngày sinh:
+                    </Label>
+                    <Col md={10}>
+                      <Input type="date" id="doB"
+                            name="doB"
+                            value={this.state.doB}
+                            onChange={this.handleInputChange} />
+                    </Col>  
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label htmlFor="startDate" md={2}>
+                      Ngày nhận việc:
+                    </Label>
+                    <Col md={10}>
+                      <Input type="date" id="startDate"
+                            name="startDate"
+                            value={this.state.startDate}
+                            onChange={this.handleInputChange} />
+                    </Col>  
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label htmlFor="department" md={2}>
+                      Phòng ban:
+                    </Label>
+                    <Col md={10}>
+                      <Input type="select" id="department"
+                            name="department"
+                            value={this.state.department}
+                            onChange={this.handleInputChange}>
+                        <option>Sale</option>
+                        <option>HR</option>
+                        <option>Marketing</option>
+                        <option>IT</option>
+                        <option>Finance</option>
+                      </Input>
+                    </Col>  
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label htmlFor="annualLeave" md={2}>
+                      Số ngày nghỉ còn lại:
+                    </Label>
+                    <Col md={10}>
+                      <Input type="number" id="annualLeave"
+                            name="annualLeave"
+                            value={this.state.annualLeave}
+                            onChange={this.handleInputChange} />
+                    </Col>  
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label htmlFor="overTime" md={2}>
+                      Số ngày đã làm thêm:
+                    </Label>
+                    <Col md={10}>
+                      <Input type="number" id="overTime"
+                            name="overTime"
+                            value={this.state.overTime} 
+                            onChange={this.handleInputChange}/>
+                    </Col>  
+                  </FormGroup>
+                  <Button type="submit" color="primary" onClick={this.toggle} onSubmit={this.handleSubmit}>Thêm</Button>{' '}
+                </Form>              
+                </ModalBody>
+              <ModalFooter>
+                <Button color="secondary" onClick={this.toggle}>Đóng</Button>
+              </ModalFooter>
+              </Modal>
+            </div>
+            <div className="col-6 col-md-6 col-lg-6">
+              <Form row>
+                <FormGroup><Input type="text" /></FormGroup>
+                <Button type="submit">Tìm</Button>
+              </Form>
+            </div>
           </div>
-
 
           <hr />
           <div className="row">
