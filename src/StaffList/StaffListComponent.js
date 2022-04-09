@@ -47,27 +47,7 @@ class Staff extends Component {
     alert("Ket qua la: " + JSON.stringify(this.state));
     event.preventDefault();
   }
-  // handleBlur = (field) => (evt) => {
-  //   this.setState({
-  //     touched: { ...this.status.touched, [field]: true }
-  //   });
-  // }
 
-  // validate(name, doB, salaryScale, startDate, annualLeave, overTime) {
-  //   const errors ={
-  //     name: '',
-  //     doB: '',
-  //     salaryScale: '',
-  //     startDate: '',
-  //     department: '',
-  //     annualLeave: '',
-  //     overTime: '',
-  //   };
-
-  //   if(this.state.touched.name && name.length < 3) 
-  //     errors.name = "Cần điền đủ họ và tên"
-  //   return errors;
-  // }
 
   toggle() {
     this.setState({
@@ -77,7 +57,6 @@ class Staff extends Component {
 
 
   render() {
-    // const errors = this.validate(this.state.name)
     const staff = this.props.staffs.map((staff) => {
       return (
         <div className="col-6 col-md-3 col-lg-2 mt-2">
