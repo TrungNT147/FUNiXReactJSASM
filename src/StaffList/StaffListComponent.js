@@ -63,7 +63,7 @@ class Staff extends Component {
           <Link to={`/staff/${staff.id}`}>
             <Card key={staff.id} >
                 <CardImg width="100%" object src={staff.image} alt={staff.name} />
-                <CardTitle>{staff.name}</CardTitle>
+                <CardTitle className="text-center">{staff.name}</CardTitle>
             </Card>
           </Link>
         </div>
