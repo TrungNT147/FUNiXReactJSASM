@@ -92,7 +92,7 @@ class Staff extends Component {
     if (this.state.touched.overTime && overTime < 1)
     errors.overTime = "Yêu cầu nhập" ;
     if (this.state.touched.department && department.length < 1)
-    errors.doB = "Yếu chuẩn bị bán sữa";
+    errors.department = "Chọn phòng ban";
     return errors;
   }
 
